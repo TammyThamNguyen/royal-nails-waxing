@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title slot="primary">{{title}}</ion-title>
+    <ion-img slot="secondary" class="logo" src="../assets/logo_crown.png"></ion-img>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form id="task-form" (submit)="addTask()" (keyup.enter)="addTask()">
+    <ion-input type="text" placeholder="Add a task" [(ngModel)]="taskInput" name="task-input"></ion-input>
+    <ion-button type="submit" color="primary" fill="solid" expand="block">
+      Add
+    </ion-button>
+  </form>
+  <ion-list>
+    <ion-item *ngFor="let task of tasks" (click)="changeStatus(task.date)" [class.done] = "task.status">
+      <ion-checkbox slot="start" [checked]="task.status"></ion-checkbox>
+      <ion-label>
+        <ion-text>{{task.name}}</ion-text>
+        <p>{{ formatDate(task.date) }}</p>
+      </ion-label>
+      <ion-button *ngIf="task.status" fill="clear" (click)="deleteItem(task.date)">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

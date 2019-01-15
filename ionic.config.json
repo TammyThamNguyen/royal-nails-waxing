@@ -1,0 +1,7 @@
+{
+  "name": "todof18",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

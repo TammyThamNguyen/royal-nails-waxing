@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Sign In</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list lines="none">
+    <ion-list-header>
+      <ion-label>
+        <h1>Sign Up</h1>
+      </ion-label>
+    </ion-list-header>
+    <ion-item>
+      <ion-label position="stacked">Email</ion-label>
+      <ion-input type="email" placeholder="you@domain.com" name="email" [(ngModel)]="email" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Password</ion-label>
+      <ion-input type="password" placeholder="minimum 6 characters" name="password" [(ngModel)]="password" ></ion-input>
+    </ion-item>
+    
+      <ion-button expand="block" class="signup" (click)="signUp()">Sign Up</ion-button>
+    
+    
+    <ion-item>
+      <p>Already have an account? <a (click)="goToLogin()" routerLink="/login">Sign In</a></p>
+    </ion-item>
+  </ion-list>
+</ion-content>
